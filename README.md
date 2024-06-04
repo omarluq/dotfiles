@@ -1,1 +1,2 @@
-My dotfiles! Or at least a starting point for them lol 😆.
+Dotfiles
+![my setup](screenshot.png "Hello World")
