@@ -1,0 +1,20 @@
+theme = "Luffytaro"
+physical_cores = false
+long_kernel = true
+long_shell = true
+show = [
+  "Host",
+  "Kernel",
+  "Distribution",
+  "OperatingSystem",
+  "DesktopEnvironment",
+  "WindowManager",
+  "Resolution",
+  "Packages",
+  "Terminal",
+  "Shell",
+  "Uptime",
+  "Processor",
+  "ProcessorLoad",
+  "Memory",
+]

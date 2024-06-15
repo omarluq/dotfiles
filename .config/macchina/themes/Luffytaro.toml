@@ -1,0 +1,43 @@
+separator = " "
+separator_color = "blue"
+key_color = "blue"
+prefer_small_ascii = true
+
+[palette]
+type = "Dark"
+visible = true
+glyph = " ⬤ "
+
+[box]
+title = " Luffytaro "
+border = "single"
+visible = true
+
+[bar]
+glyph = "▮ "
+hide_delimiters = true
+visible = true
+
+[randomize]
+key_color = false
+separator_color = false
+
+[custom_ascii]
+color = "blue"
+path = "~/.config/macchina/themes/Luffytaro.txt"
+
+[keys]
+host = " Host"
+machine = "󰷵 Machine"
+de = " Desktop"
+kernel = " Kernel"
+distro = "󰌽 Distro"
+packages = " Packages"
+terminal = " Terminal"
+shell = " Shell"
+cpu = " CPU"
+cpu_load = " CPU Load"
+memory = "󰍛 Memory"
+battery = "  Battery"
+uptime = " Uptime"
+resolution = "󱡶 Resolution"

@@ -1,6 +1,7 @@
-name: stimulus-store
-root: ~/Desktop/dev/stimulus-store/
+# /home/omarluq/.config/tmuxinator/main.yml
 
+name: main
+root: ~/
 # Optional tmux socket
 # socket_name: foo
 
@@ -43,11 +44,4 @@ root: ~/Desktop/dev/stimulus-store/
 # attach: false
 
 windows:
-  - editor:
-      layout: e365,256x60,0,0[256x40,0,0,0,256x19,0,41,3]
-      # Synchronize all panes of this window, can be enabled before or after the pane commands run.
-      # 'before' represents legacy functionality and will be deprecated in a future release, in favour of 'after'
-      # synchronize: after
-      panes:
-        - clear && nvim
-        - clear
+  - default:
