@@ -18,6 +18,9 @@ config.window_padding = {
 	top = 10,
 	bottom = 10,
 }
+
+config.initial_rows = 50
+config.initial_cols = 160
 --
 config.colors = {
 	tab_bar = {
