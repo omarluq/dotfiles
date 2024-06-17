@@ -1,5 +1,30 @@
-## The following setting specifies the editor used by ble.sh.  This is used for
-## the widget edit-and-execute (C-x C-e) and editor for a large amount of
-## command line texts.  Possible values include, for example, "vim", "emacs
-## -nw" and "nano".
+# blerc
+
+# The following setting specifies the editor used by ble.sh.  This is used for
+# the widget edit-and-execute (C-x C-e) and editor for a large amount of
+# command line texts.  Possible values include, for example, "vim", "emacs -nw" and "nano".
 bleopt editor=vim
+ble-import contrib/prompt-vim-mode
+PS1='[\u@\h \W]\q{contrib/vim-mode}\$ '
+
+
+# If ble/contrib/integration/fzf cannot find the fzf directory, please set the
+# following variable "_ble_contrib_fzf_base" manually.  The value
+# "/path/to/fzf-directory" should be replaced by a path to the fzf directory
+# such as "$HOME/.fzf" or "/usr/share/fzf" that contain
+# "shell/{completion,key-bindings}.bash" or "{completion,key-bindings}.bash".
+
+#_ble_contrib_fzf_base=/path/to/fzf-directory
+
+
+# Note: If you would like to combine fzf-completion with bash_completion, you
+# need to load bash_completion earlier than fzf-completion.
+
+# source /path/to/bash_completion.sh
+# source "/usr/share/bash-completion/bash_completion"
+
+# Setup fzf
+_ble_contrib_fzf_git_config=key-binding:sabbrev:arpeggio
+ble-import -d integration/fzf-completion
+ble-import -d integration/fzf-key-bindings
+ble-import -d integration/fzf-git

@@ -11,6 +11,9 @@ if [[ $- == *i* ]]; then # in interactive session
 	set -o vi
 fi
 
+# env vars
+[ -r ~/.bashenv ] && . ~/.bashenv
+
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 PS1='[\u@\h \W]\$ '
@@ -20,6 +23,9 @@ export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init --path)"
 eval "$(pyenv init -)"
+
+# Created by `pipx` on 2024-06-15 21:04:03
+export PATH="$PATH:/home/omarluq/.local/bin"
 
 # rbenv
 export RBENV_ROOT="/usr/local/rbenv"
@@ -49,14 +55,14 @@ alias dc='docker-compose'
 alias klog='kubectl logs -f -n'
 alias cpufetch='~/cpufetch/cpufetch'
 alias gpufetch='~/gpufetch/gpufetch'
+alias cd='z'
+alias cat='bat --color=always --style=numbers --line-range=:500'
+alias vifzf='FILE=$(fzf --preview "cat {}") && [ -n "$FILE" ] && nvim -- "$FILE"'
 
 # go stuff
 export GOENV_ROOT="$HOME/.goenv"
 export PATH="$GOENV_ROOT/bin:$PATH"
 eval "$(goenv init -)"
-export PATH="$GOENV_ROOT/bin:$PATH"
-export PATH="$GOROOT/bin:$PATH"
-export PATH="$PATH:$GOPATH/bin"
 
 # nvidia stuff
 export CMAKE_CUDA_COMPILER=/opt/cuda/bin/nvcc
@@ -67,6 +73,7 @@ export CMAKE_CUDA_COMPILER_TOOLKIT_ROOT=/opt/cuda
 # ~/.tmux/plugins
 export PATH=$HOME/.tmux/plugins/tmux-session-wizard/bin:$PATH
 
+# zoxide
 eval "$(zoxide init bash)"
 
 # mangohud
@@ -80,9 +87,7 @@ eval "$(starship init bash)"
 # launch tmux on start
 [ -z "$TMUX" ] && { mux main; }
 
-[[ ${BLE_VERSION-} ]] && ble-attach
-
 macchina
 
-# Created by `pipx` on 2024-06-15 21:04:03
-export PATH="$PATH:/home/omarluq/.local/bin"
+# ble.sh
+[[ ${BLE_VERSION-} ]] && ble-attach
