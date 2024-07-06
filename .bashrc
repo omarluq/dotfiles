@@ -8,7 +8,7 @@
 [[ $- != *i* ]] && return
 
 if [[ $- == *i* ]]; then # in interactive session
-	set -o vi
+  set -o vi
 fi
 
 # env vars
@@ -30,7 +30,7 @@ export PATH="$PATH:/home/omarluq/.local/bin"
 # rbenv
 export RBENV_ROOT="/usr/local/rbenv"
 if [ -d "${RBENV_ROOT}" ]; then
-	export PATH="${RBENV_ROOT}/bin:${PATH}"
+  export PATH="${RBENV_ROOT}/bin:${PATH}"
 fi
 
 export PATH="$HOME/.rbenv/plugins/ruby-build/bin:$PATH"
@@ -42,6 +42,15 @@ export EDITOR='nvim'
 
 # k9s
 export KUBE_EDITOR='nvim'
+
+# fzf
+export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
+    --color=fg:#e5e9f0,bg:#3b4252,hl:#81a1c1
+    --color=fg+:#e5e9f0,bg+:#3b4252,hl+:#81a1c1
+    --color=info:#eacb8a,prompt:#bf6069,pointer:#b48dac
+    --color=marker:#a3be8b,spinner:#b48dac,header:#a3be8b
+    --height 40% --tmux 100%,50% --layout reverse
+    --preview "cat {}" --bind "enter:become(nvim {})"'
 
 # aliases
 alias ll='ls-go -alkSi'
@@ -57,7 +66,6 @@ alias cpufetch='~/cpufetch/cpufetch'
 alias gpufetch='~/gpufetch/gpufetch'
 alias cd='z'
 alias cat='bat --color=always --style=numbers --line-range=:500'
-alias vifzf='FILE=$(fzf --preview "cat {}") && [ -n "$FILE" ] && nvim -- "$FILE"'
 
 # go stuff
 export GOENV_ROOT="$HOME/.goenv"
@@ -82,10 +90,14 @@ export MANGOHUD=1
 [[ -f ~/.bash-preexec.sh ]] && source ~/.bash-preexec.sh
 eval "$(atuin init bash)"
 
-eval "$(starship init bash)"
-
 # launch tmux on start
 [ -z "$TMUX" ] && { mux main; }
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH=$BUN_INSTALL/bin:$PATH
+
+eval "$(starship init bash)"
 
 macchina
 

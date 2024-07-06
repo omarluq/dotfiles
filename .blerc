@@ -1,4 +1,6 @@
 # blerc
+#
+bleopt canvas_winch_action=redraw-prev
 
 # The following setting specifies the editor used by ble.sh.  This is used for
 # the widget edit-and-execute (C-x C-e) and editor for a large amount of
