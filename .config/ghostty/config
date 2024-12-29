@@ -1,0 +1,7 @@
+font-family = JetBrains Mono
+font-size = 10
+theme = nord
+window-padding-y = 5
+window-padding-x = 5
+window-decoration = false
+background-opacity = 0.94
